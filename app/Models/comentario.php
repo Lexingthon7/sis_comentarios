@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\respuesta;
+use App\Models\Respuesta;
 use App\Models\User;
-class comentario extends Model
+class Comentario extends Model
 {
     /** @use HasFactory<\Database\Factories\ComentarioFactory> */
     use HasFactory;
@@ -16,6 +16,6 @@ class comentario extends Model
     }
 
     public function respuestas(){
-        return $this->hasMany(respuesta::class);
+        return $this->hasMany(Respuesta::class);
     }
 }

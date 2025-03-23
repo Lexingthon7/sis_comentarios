@@ -7,8 +7,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\respuesta;
-use app\Models\comentario;
+use App\Models\Respuesta;
+use app\Models\Comentario;
 
 class User extends Authenticatable
 {
@@ -50,10 +50,10 @@ class User extends Authenticatable
     }
 
     public function comentarios(){
-        return $this->hasMany(comentario::class);
+        return $this->hasMany(Comentario::class);
     }
 
     public function respuestas(){
-        return $this->hasMany(respuesta::class);
+        return $this->hasMany(Respuesta::class);
     }
 }

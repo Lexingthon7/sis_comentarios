@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\comentario;
+use App\Models\Comentario;
 use app\Models\User;
 
-class respuesta extends Model
+class Respuesta extends Model
 {
     /** @use HasFactory<\Database\Factories\RespuestaFactory> */
     use HasFactory;
@@ -17,6 +17,6 @@ class respuesta extends Model
     }
 
     public function comentario(){
-        return $this->belongsTo(comentario::class);
+        return $this->belongsTo(Comentario::class);
     }
 }
