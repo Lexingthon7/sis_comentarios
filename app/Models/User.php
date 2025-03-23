@@ -3,9 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\respuesta;
+use app\Models\comentario;
 
 class User extends Authenticatable
 {
@@ -44,5 +47,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function comentarios(){
+        return $this->hasMany(comentario::class);
+    }
+
+    public function respuestas(){
+        return $this->hasMany(respuesta::class);
     }
 }
